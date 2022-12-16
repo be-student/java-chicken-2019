@@ -16,6 +16,14 @@ public class Menu {
         this.price = price;
     }
 
+
+    public int calculatePrice(int count) {
+        if (category == Category.BEVERAGE) {
+            return price * count;
+        }
+        return price * count - count / 10;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
