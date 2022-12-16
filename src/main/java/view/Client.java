@@ -24,4 +24,13 @@ public class Client {
         List<Menu> menus = MenuRepository.menus();
         OutputView.printMenus(menus);
     }
+
+    private void repeat(Runnable runnable) {
+        try {
+            runnable.run();
+        } catch (IllegalArgumentException e) {
+            OutputView.printErrorMessage(e.getMessage());
+            repeat(runnable);
+        }
+    }
 }
