@@ -21,6 +21,7 @@ public class OutputView {
     }
 
     public static void printMenus(List<Menu> menus) {
+        System.out.println();
         for (Menu menu : menus) {
             System.out.println(menu);
         }
