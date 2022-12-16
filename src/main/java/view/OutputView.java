@@ -13,6 +13,7 @@ public class OutputView {
     private static final String ERROR_PREFIX = "[ERROR]";
 
     public static void printTables(List<Table> tables) {
+        System.out.println();
         System.out.println("## 테이블 목록");
         int size = tables.size();
         printLine(TOP_LINE, size);
