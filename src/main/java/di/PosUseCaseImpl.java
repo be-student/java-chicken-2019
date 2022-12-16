@@ -5,6 +5,7 @@ import domain.MenuRepository;
 import domain.OrderDto;
 import domain.Table;
 import domain.TableRepository;
+import domain.WayToPay;
 import java.util.List;
 
 public class PosUseCaseImpl implements PosUseCase {
@@ -19,11 +20,18 @@ public class PosUseCaseImpl implements PosUseCase {
 
     @Override
     public List<OrderDto> findOrderByTable(FindOrderCommand findOrderCommand) {
-        return null;
+        Table targetTable = TableRepository.findById(findOrderCommand.getTableId());
+        return targetTable.calculateOrder();
     }
 
     @Override
     public int pay(PayCommand payCommand) {
-        return 0;
+        Table targetTable = TableRepository.findById(payCommand.getTable());
+        WayToPay option = WayToPay.from(payCommand.getPayOption());
+        int totalMoney = targetTable.calculateOrder()
+                .stream()
+                .map(OrderDto::getMoney)
+                .reduce(0, Integer::sum);
+        return option.calculateFee(totalMoney);
     }
 }
