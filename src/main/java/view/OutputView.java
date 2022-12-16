@@ -10,6 +10,7 @@ public class OutputView {
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "┗ - ┛";
     private static final String BOTTOM_CHECKED_LINE = "┗ # ┛";
+    private static final String ERROR_PREFIX = "[ERROR]";
 
     public static void printTables(List<Table> tables) {
         System.out.println("## 테이블 목록");
@@ -48,5 +49,9 @@ public class OutputView {
             System.out.printf(TABLE_FORMAT, table);
         }
         System.out.println();
+    }
+
+    public static void printErrorMessage(String errorMessage) {
+        System.out.println(ERROR_PREFIX + errorMessage);
     }
 }
