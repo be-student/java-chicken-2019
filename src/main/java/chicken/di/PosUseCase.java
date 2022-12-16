@@ -1,6 +1,6 @@
-package di;
+package chicken.di;
 
-import domain.OrderDto;
+import chicken.domain.OrderDto;
 import java.util.List;
 
 public interface PosUseCase {

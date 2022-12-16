@@ -1,11 +1,11 @@
-package di;
+package chicken.di;
 
-import domain.Menu;
-import domain.MenuRepository;
-import domain.OrderDto;
-import domain.Table;
-import domain.TableRepository;
-import domain.WayToPay;
+import chicken.domain.Menu;
+import chicken.domain.MenuRepository;
+import chicken.domain.OrderDto;
+import chicken.domain.Table;
+import chicken.domain.TableRepository;
+import chicken.domain.WayToPay;
 import java.util.List;
 
 public class PosUseCaseImpl implements PosUseCase {

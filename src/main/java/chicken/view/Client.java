@@ -1,13 +1,13 @@
-package view;
+package chicken.view;
 
-import di.FindOrderCommand;
-import di.OrderCommand;
-import di.PayCommand;
-import di.PosUseCase;
-import domain.Menu;
-import domain.MenuRepository;
-import domain.Table;
-import domain.TableRepository;
+import chicken.di.FindOrderCommand;
+import chicken.di.OrderCommand;
+import chicken.di.PayCommand;
+import chicken.di.PosUseCase;
+import chicken.domain.Menu;
+import chicken.domain.MenuRepository;
+import chicken.domain.Table;
+import chicken.domain.TableRepository;
 import java.util.List;
 
 public class Client {

@@ -1,4 +1,4 @@
-package view;
+package chicken.view;
 
 import java.util.Arrays;
 

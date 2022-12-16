@@ -1,5 +1,7 @@
-import di.PosUseCaseImpl;
-import view.Client;
+package chicken;
+
+import chicken.di.PosUseCaseImpl;
+import chicken.view.Client;
 
 public class Application {
 

@@ -1,4 +1,4 @@
-package domain;
+package chicken.domain;
 
 public enum Category {
     CHICKEN("치킨"),
@@ -6,7 +6,7 @@ public enum Category {
 
     private final String name;
 
-    Category(final String name) {
+    Category(String name) {
         this.name = name;
     }
 

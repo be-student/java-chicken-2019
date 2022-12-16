@@ -1,4 +1,4 @@
-package di;
+package chicken.di;
 
 public class OrderCommand {
 

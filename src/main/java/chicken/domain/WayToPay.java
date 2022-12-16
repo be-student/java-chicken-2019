@@ -1,4 +1,4 @@
-package domain;
+package chicken.domain;
 
 import java.util.Arrays;
 

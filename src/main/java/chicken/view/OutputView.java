@@ -1,8 +1,8 @@
-package view;
+package chicken.view;
 
-import domain.Menu;
-import domain.OrderDto;
-import domain.Table;
+import chicken.domain.Menu;
+import chicken.domain.OrderDto;
+import chicken.domain.Table;
 import java.util.List;
 
 public class OutputView {
