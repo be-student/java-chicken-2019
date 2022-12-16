@@ -1,5 +1,8 @@
 package view;
 
+import di.FindOrderCommand;
+import di.OrderCommand;
+import di.PayCommand;
 import di.PosUseCase;
 import domain.Menu;
 import domain.MenuRepository;
@@ -37,12 +40,22 @@ public class Client {
 
         List<Menu> menus = MenuRepository.menus();
         OutputView.printMenus(menus);
+
+        int menuId = InputView.inputMenu();
+        int menuCount = InputView.inputMenuCount();
+        posUseCase.order(new OrderCommand(tableNumber, menuId, menuCount));
     }
 
     private void pay() {
         List<Table> tables = TableRepository.tables();
         OutputView.printTables(tables);
 
+        int tableNumber = InputView.inputTableNumber();
+        OutputView.printOrder(posUseCase.findOrderByTable(new FindOrderCommand(tableNumber)));
+
+        int wayToPay = InputView.inputWayToPay(tableNumber);
+        int totalMoney = posUseCase.pay(new PayCommand(tableNumber, wayToPay));
+        OutputView.printTotalMoney(totalMoney);
     }
 
     private void repeat(Runnable runnable) {
