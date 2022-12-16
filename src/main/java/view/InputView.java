@@ -38,4 +38,11 @@ public class InputView {
         System.out.println("## 메뉴의 수량을 입력하세요.");
         return scanner.nextInt();
     }
+
+    public static int inputWayToPay(int tableId) {
+        System.out.println();
+        System.out.println("## " + tableId + "번 테이블의 결제를 진행합니다.");
+        System.out.println("## 신용 카드는 1번, 현금은 2번");
+        return scanner.nextInt();
+    }
 }
