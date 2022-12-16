@@ -16,6 +16,10 @@ public class Menu {
         this.price = price;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean isId(int id) {
         return number == id;
     }

@@ -1,5 +1,10 @@
 package domain;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class Table {
 
     private final int number;
@@ -22,8 +27,22 @@ public class Table {
 
     public void payed() {
         ordered = false;
+        orders.clear();
+    }
+
     public boolean isId(int tableId) {
         return number == tableId;
+    }
+
+    public List<OrderDto> calculateOrder() {
+        return orders.entrySet().stream()
+                .filter(it -> it.getValue() > 0)
+                .map(it -> toDto(it.getKey(), it.getValue()))
+                .collect(Collectors.toList());
+    }
+
+    private OrderDto toDto(Menu menu, int count) {
+        return new OrderDto(menu.getName(), count, menu.calculatePrice(count));
     }
 
     public boolean isOrdered() {
