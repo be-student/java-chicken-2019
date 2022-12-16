@@ -28,7 +28,7 @@ public class Menu {
         if (category == Category.BEVERAGE) {
             return price * count;
         }
-        return price * count - count / 10;
+        return price * count - count / 10 * 10000;
     }
 
     @Override
