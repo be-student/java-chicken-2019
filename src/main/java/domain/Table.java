@@ -22,7 +22,11 @@ public class Table {
 
     public void ordered(Menu menu, int count) {
         ordered = true;
-        orders.put(menu, orders.getOrDefault(menu, 0) + count);
+        int alreadyOrderedCount = orders.getOrDefault(menu, 0);
+        if (alreadyOrderedCount + count > 99) {
+            throw new IllegalArgumentException("한 테이블에서 주문할 수 있는 내용은 99개까지 입니다");
+        }
+        orders.put(menu, alreadyOrderedCount + count);
     }
 
     public void payed() {
