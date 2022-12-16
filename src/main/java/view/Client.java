@@ -39,6 +39,12 @@ public class Client {
         OutputView.printMenus(menus);
     }
 
+    private void pay() {
+        List<Table> tables = TableRepository.tables();
+        OutputView.printTables(tables);
+
+    }
+
     private void repeat(Runnable runnable) {
         try {
             runnable.run();
