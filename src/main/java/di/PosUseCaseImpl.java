@@ -32,6 +32,7 @@ public class PosUseCaseImpl implements PosUseCase {
                 .stream()
                 .map(OrderDto::getMoney)
                 .reduce(0, Integer::sum);
+        targetTable.payed();
         return option.calculateFee(totalMoney);
     }
 }
