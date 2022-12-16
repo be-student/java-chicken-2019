@@ -16,6 +16,20 @@ public class Client {
     }
 
     public void run() {
+        while (true) {
+            ClientCommand input = ClientCommand.fromInput(InputView.inputFunction());
+            if (input == ClientCommand.QUIT) {
+                return;
+            }
+            if (input == ClientCommand.PAY) {
+                repeat(this::pay);
+                continue;
+            }
+            repeat(this::order);
+        }
+    }
+
+    private void order() {
         List<Table> tables = TableRepository.tables();
         OutputView.printTables(tables);
 
