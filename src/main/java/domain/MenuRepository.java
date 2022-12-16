@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MenuRepository {
+
     private static final List<Menu> menus = new ArrayList<>();
 
     static {
@@ -20,5 +21,12 @@ public class MenuRepository {
 
     public static List<Menu> menus() {
         return Collections.unmodifiableList(menus);
+    }
+
+    public static Menu findById(int menuId) {
+        return menus.stream()
+                .filter(menu -> menu.isId(menuId))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 메뉴입니다"));
     }
 }

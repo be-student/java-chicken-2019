@@ -16,6 +16,9 @@ public class Menu {
         this.price = price;
     }
 
+    public boolean isId(int id) {
+        return number == id;
+    }
 
     public int calculatePrice(int count) {
         if (category == Category.BEVERAGE) {

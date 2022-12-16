@@ -22,6 +22,8 @@ public class Table {
 
     public void payed() {
         ordered = false;
+    public boolean isId(int tableId) {
+        return number == tableId;
     }
 
     public boolean isOrdered() {

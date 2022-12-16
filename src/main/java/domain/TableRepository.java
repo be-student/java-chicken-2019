@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class TableRepository {
+
     private static final List<Table> tables = new ArrayList<>();
 
     static {
@@ -18,5 +19,12 @@ public class TableRepository {
 
     public static List<Table> tables() {
         return Collections.unmodifiableList(tables);
+    }
+
+    public static Table findById(int tableId) {
+        return tables.stream()
+                .filter(table -> table.isId(tableId))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 테이블입니다"));
     }
 }
